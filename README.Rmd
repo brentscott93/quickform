@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
-The goal of quickform is to ...
+I created this package because I wanted several features not implemented in Google Forms. This is a spin off of the [shinyforms](https://github.com/daattali/shinyforms) package. I wanted survey participants to be able to come back to the survey and edit/change/update their responses and I wanted to be able to have the app email the unique ID that is created for them to allow them to return and edit their responses. This package uses the {googledrive}, {googlesheets4}, and {gmailr} packages to persistently store data as google sheets and email participants. Usually storing credentials and authentication tokens can be tricky in shiny apps so this was designed to hopefully _just work_. You will have to create the app and use it interactively once and do the so-called "OAuth Dance" but then the googleforms package will store the tokens in the '.secrets' folder in the shiny app directory. Make sure to upload that folder when publishing to shinyapps.io. Additionally, to use {gmailr} you will need to set up a 'credentials.json' and manually move it into the shiny app home directory as the app will look for the credentials by using _here::here('credentials.json')_. More information on setting up [gmailr here](https://github.com/r-lib/gmailr). 
 
 ## Installation
 
@@ -29,27 +29,3 @@ You can install the released version of quickform from [CRAN](https://CRAN.R-pro
 install.packages("quickform")
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-library(quickform)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!

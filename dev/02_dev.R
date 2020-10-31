@@ -22,6 +22,8 @@ usethis::use_package( "googledrive",  type = 'imports'  )
 usethis::use_package( "googlesheets4" ,  type = 'imports' )
 usethis::use_package( "gmailr",  type = 'imports'  )
 usethis::use_package( "shinyjs",  type = 'imports' )
+usethis::use_package( "fresh",  type = 'imports' )
+usethis::use_package( "scales",  type = 'imports' )
 ## Add modules ----
 ## Create a module infrastructure in R/
 golem::add_module( name = "name_of_module1" ) # Name of the module
