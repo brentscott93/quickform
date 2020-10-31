@@ -19,10 +19,10 @@ Imports:
     googlesheets4,
     gmailr,
     fresh,
+    shinyjs,
     scales
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 Suggests: 
-    testthat,
-    shinyjs
+    testthat
