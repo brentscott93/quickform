@@ -27,5 +27,5 @@ You can install the released version of quickform from [CRAN](https://CRAN.R-pro
 
 ``` r
 install.packages("quickform")
-```
+``` 
 
