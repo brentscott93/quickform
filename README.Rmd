@@ -65,8 +65,8 @@ quickform(title = "Quickform Demo",
 
 )
 ```
-
+ 
 ```{r}
-knitr::include_app("https://brentscott93.shinyapps.io/quickform/")
+knitr::include_app("https://brentscott93.shinyapps.io/quickform")
 ```
 

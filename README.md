@@ -87,9 +87,9 @@ quickform(title = "Quickform Demo",
 ```
 
 ``` r
-knitr::include_app("https://brentscott93.shinyapps.io/quickform/")
+knitr::include_app("https://brentscott93.shinyapps.io/quickform")
 ```
 
-<iframe src="https://brentscott93.shinyapps.io/quickform/?showcase=0" width="100%" height="400px">
+<iframe src="https://brentscott93.shinyapps.io/quickform?showcase=0" width="100%" height="400px">
 
 </iframe>
