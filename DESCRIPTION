@@ -1,0 +1,13 @@
+Package: quickform
+Title: Create a google form look-a-like shiny app
+Version: 0.0.0.9000
+Authors@R: person('Brent', 'Scott', email = 'brentscott93£gmail.com', role = c('cre', 'aut'))
+Description: Quickly create a survey form in one function.
+License: MIT + file LICENSE
+Imports: 
+    config,
+    golem,
+    shiny
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
