@@ -19,7 +19,7 @@ golem::fill_desc(
   pkg_description = "Quickly create a survey form in one function.", # The Description of the package containing the App
   author_first_name = "Brent", # Your First Name
   author_last_name = "Scott", # Your Last Name
-  author_email = "brentscott93£gmail.com", # Your Email
+  author_email = "brentscott93@gmail.com", # Your Email
   repo_url = NULL # The URL of the GitHub Repo (optional)
 )
 
