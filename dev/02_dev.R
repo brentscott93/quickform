@@ -21,7 +21,7 @@ usethis::use_package( "magrittr",  type = 'imports'  )
 usethis::use_package( "googledrive",  type = 'imports'  )
 usethis::use_package( "googlesheets4" ,  type = 'imports' )
 usethis::use_package( "gmailr",  type = 'imports'  )
-usethis::use_package( "shinyjs",  type = 'imports' )
+usethis::use_package( "shinyjs" )
 usethis::use_package( "fresh",  type = 'imports' )
 usethis::use_package( "scales",  type = 'imports' )
 ## Add modules ----

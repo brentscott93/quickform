@@ -15,7 +15,7 @@
 #'
 #' @return a shiny app
 #' @export
-#' @import shiny shinydashboard shinyjs magrittr
+#' @import shiny shinydashboard magrittr
 #' @examples
 #' if(interactive()){
 #' library(shiny)
