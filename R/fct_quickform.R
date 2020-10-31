@@ -87,12 +87,7 @@ quickform <- function(title = NULL,
 
     googledrive::drive_auth(email = gmail, cache = '.secrets')
     googlesheets4::gs4_auth(token = googledrive::drive_token())
-    #googledrive::drive_auth(path = service_account)
-    #googlesheets4::gs4_auth(path = service_account)
-  }
   # Create new sheets folder for responses
-
-
   #if folder does not exist create it
   if(nrow(googledrive::drive_find(folder, n_max = 1)) == 0){
     googledrive::drive_mkdir(folder)
@@ -102,6 +97,7 @@ quickform <- function(title = NULL,
     googledrive::drive_share(folder, role = 'reader', type = 'anyone')
   }
 
+ }
   #if the user wants the participants to be able to allow people to edit/return to update survey
   #option to email unique id with gmailr
   if(returningUser){
