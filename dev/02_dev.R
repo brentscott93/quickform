@@ -16,7 +16,7 @@
 ## Dependencies ----
 ## Add one line by package you want to add as dependency
 usethis::use_package( "shiny" )
-usethis::use_package( "shinydashboard" )
+usethis::use_package( "shinydashboard", type = 'depends' )
 usethis::use_package( "magrittr" )
 usethis::use_package( "googledrive" )
 usethis::use_package( "googlesheets4" )
