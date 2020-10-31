@@ -112,32 +112,7 @@ quickform <- function(title = NULL,
       # Authenticate with the tokens in the copied cache
       gmailr::gm_auth(email = gmail, cache = '.gm-secrets')
     }}
-  #   }
-  # } else {
-  #   #if in desktop mode make folder locally
-  #   dir.create(folder)
-  # }
 
-  # getRequiredValues <- function(questions){
-  #   requiredValues <<- data.frame(id = NA, required = F, type = NA)
-  #   for(i in seq_along(questions)){
-  #
-  #     if(!is.null(questions[[i]]$required)){
-  #       if (questions[[i]]$required) {
-  #         requiredValues[i,] <<- c(questions[[i]]$id, T, questions[[i]]$type)
-  #
-  #       } else {
-  #         requiredValues[i,] <<- c(questions[[i]]$id, F, questions[[i]]$type)
-  #
-  #       }
-  #     } else {
-  #       requiredValues[i,] <<- c(questions[[i]]$id, F, questions[[i]]$type)
-  #
-  #     }
-  #   }
-  # }
-
-  #token <- readRDS(list.files(here::here('.secrets')))
   #user interface
   #this is a shinydashboard with no header or sidebar
   #mimics looks of a google form
@@ -192,7 +167,7 @@ quickform <- function(title = NULL,
         l$sidebarCollapsed <- NULL
         l$sidebarItemExpanded <- NULL
         l$userId <- NULL
-
+        setProgress(0.35)
         if(returningUser) l$loadReturning <- NULL
 
         data <- as.data.frame(l)
@@ -242,7 +217,7 @@ quickform <- function(title = NULL,
           }
         }
       })
-      #once complete saving reactitiy - update a reactive value to launch a modal
+      #once complete -  update a reactive value to launch a modal
       rv$saved <- rv$saved + 1
     })
 

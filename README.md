@@ -26,14 +26,66 @@ the shiny app directory. Make sure to upload that folder when publishing
 to shinyapps.io. Additionally, to use {gmailr} you will need to set up a
 ‘credentials.json’ and manually move it into the shiny app home
 directory as the app will look for the credentials by using
-*here::here(‘credentials.json’)*. More information on setting up
-[gmailr here](https://github.com/r-lib/gmailr).
+‘credentials.json’. More information on setting up [gmailr
+here](https://github.com/r-lib/gmailr). Additionally, {quickform}
+provides convenient wrappers for Shiny widgets that match the names from
+google forms (i.e shiny::selectInput -\> quickform::dropdown).
 
 ## Installation
 
-You can install the released version of quickform from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the released version of quickform from GitHub with:
 
 ``` r
-install.packages("quickform")
+devtools::install_github('brentscott93/quickform')
 ```
+
+## Examples
+
+This is the code for the example that is currently deployed on
+shinyapps.io. The responses are saved in a [public Google Drive
+folder](https://drive.google.com/drive/folders/1sgV9XFyYkf8jGp-xGAHcmIJfN83OkHt9?usp=sharing)
+under my gmail (<brentscott93@gmail.com>). I setup credentials for the
+{gmailr} app so a “returning user ID” can be emailed to the respondents
+and they can return to update their responses. *Hint: copy/paste of this
+code will not work for you without first making a credentials to send
+emails.*
+
+``` r
+quickform(title = "Quickform Demo",
+          description = "Description of survey here.",
+          questions = list(
+                        list(id = "age", type = "numeric", title = "Age (yrs)", required = T),
+                        list(id = "height", type = "height", title = "Height (ft-in)", required = T),
+                        list(id = "weight_lbs", type = "numeric", title = "Weight (lbs)", required = T),
+                        list(id = 'ethnicity', type = "multiplechoice", 
+                             title = "Are you of Hispanic, Latino, or of Spanish origin?" , 
+                             choices = list('No', 'Yes'), required = T),
+                        list(id = "race", type = "multiplechoice", title = "Race", 
+                              choices = list( 'American Indian or Alaska Native',
+                                              'Asian',
+                                              'Black or African American',
+                                              'Native Hawaiian or Other Pacific Islander',
+                                              'White',
+                                              'Other'), 
+                              required = T),
+                        list(id = "bp_systolic", type = "numeric", title = "Blood Pressure (Systolic)"),
+                        list(id = "bp_diastolic", type = "numeric", title = "Blood Pressure (Diastolic)"),
+                        list(id = "resting_HR", type = "numeric", title = "Resting Heart Rate")
+                        ),
+
+                        gmail = T,
+                        folder = 'quickform-demo',
+                        returningUser = T,
+                        emailId = T,
+                        subject = 'Quickform Demo Email ID'
+
+)
+```
+
+``` r
+knitr::include_app("https://brentscott93.shinyapps.io/quickform/")
+```
+
+<iframe src="https://brentscott93.shinyapps.io/quickform/?showcase=0" width="100%" height="400px">
+
+</iframe>
