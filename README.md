@@ -10,7 +10,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 I created this package because I wanted several features not implemented
-in Google Forms. This is a spin off of the
+in Google Forms, but ended up not needing it so I stopped development.
+It is what it is. This is a spin off of the
 [shinyforms](https://github.com/daattali/shinyforms) package. I wanted
 survey participants to be able to come back to the survey and
 edit/change/update their responses and I wanted to be able to have the
@@ -20,16 +21,16 @@ and edit their responses. This package uses the {googledrive},
 google sheets and email participants. Usually storing credentials and
 authentication tokens can be tricky in shiny apps so this was designed
 to hopefully *just work*. You will have to create the app and use it
-interactively once and do the so-called “OAuth Dance” but then the
-googleforms package will store the tokens in the ‘.secrets’ folder in
-the shiny app directory. Make sure to upload that folder when publishing
-to shinyapps.io. Additionally, to use {gmailr} you will need to set up a
-‘credentials.json’ and manually move it into the shiny app home
-directory as the app will look for the credentials by using
-‘credentials.json’. More information on setting up [gmailr
+interactively once and do the so-called “OAuth Dance” and then
+{quickform} will cache the tokens using `cache = '.secrets'` in the
+shiny app directory. Make sure to upload all auth files/credentials when
+publishing to shinyapps.io. Additionally, to use {gmailr} you will need
+to set up a ‘credentials.json’ and manually move it into the shiny app
+home directory as the app will look for the credentials as
+`'credentials.json'`. More information on setting up [gmailr
 here](https://github.com/r-lib/gmailr). Additionally, {quickform}
 provides convenient wrappers for Shiny widgets that match the names from
-google forms (i.e shiny::selectInput -\> quickform::dropdown).
+google forms (i.e `shiny::selectInput` -\> `quickform::dropdown`).
 
 ## Installation
 
@@ -41,8 +42,9 @@ devtools::install_github('brentscott93/quickform')
 
 ## Examples
 
-This is the code for the example that is currently deployed on
-shinyapps.io. The responses are saved in a [public Google Drive
+This is the entire `app.R` code for the example that is [currently
+deployed on shinyapps.io](https://brentscott93.shinyapps.io/quickform/).
+The responses are saved in a [public Google Drive
 folder](https://drive.google.com/drive/folders/1sgV9XFyYkf8jGp-xGAHcmIJfN83OkHt9?usp=sharing)
 under my gmail (<brentscott93@gmail.com>). I setup credentials for the
 {gmailr} app so a “returning user ID” can be emailed to the respondents
@@ -51,6 +53,8 @@ code will not work for you without first making a credentials to send
 emails.*
 
 ``` r
+library(quickform)
+
 quickform(title = "Quickform Demo",
           description = "Description of survey here.",
           questions = list(
