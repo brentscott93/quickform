@@ -1,3 +1,4 @@
+
 #' Create a Google Form look-a-like shiny app
 #'
 #' @description Create a shiny app with minimal code that mimicks that looks of a Google Form. Currently only stores data in Google Drive (or locally) and has the option to allow survey participants to return and edit their survey with a unique ID. Optionally, this ID can be emailed to the user. Requires one-time setup of {googledrive}, {googlesheets4}, and {gmailr}
