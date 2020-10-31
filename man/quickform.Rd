@@ -48,8 +48,7 @@ Create a shiny app with minimal code that mimicks that looks of a Google Form. C
 if(interactive()){
 library(shiny)
 library(shinydashboard)
-library(shinyforms)
-googleform(
+quickform(
 title = "My Survey",
 description = 'Describe your survey here',
 questions = list(

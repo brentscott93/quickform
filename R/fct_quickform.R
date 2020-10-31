@@ -20,8 +20,7 @@
 #' if(interactive()){
 #' library(shiny)
 #' library(shinydashboard)
-#' library(shinyforms)
-#'googleform(
+#' quickform(
 #' title = "My Survey",
 #' description = 'Describe your survey here',
 #' questions = list(
